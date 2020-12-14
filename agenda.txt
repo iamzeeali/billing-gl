@@ -1,0 +1,19 @@
+customer
+vendor
+Employee
+Item
+
+Sales: SQ, SO, SIn, DEL
+	
+Purchase: PQ, PO, PI, GRN
+
+warehouse: GRN, put away, picking & disptach
+
+Inventory: Stock, Physical Count
+
+Payroll-attendance, salary
+
+
+***********************UPDATES************************
+CRM
+
