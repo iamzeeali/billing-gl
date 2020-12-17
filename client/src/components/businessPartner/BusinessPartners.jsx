@@ -20,31 +20,31 @@ const BusinessPartners = ({
 
   return (
     <Fragment>
-      <main className="container">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item text-small">
-            <Link to="/">Home</Link>
+      <main className='container'>
+        <ol className='breadcrumb'>
+          <li className='breadcrumb-item text-small'>
+            <Link to='/'>Home</Link>
           </li>
-          <li className="breadcrumb-item">Business Partner</li>
-          <li className="breadcrumb-item active">Business Partners</li>
+          <li className='breadcrumb-item'>Business Partner</li>
+          <li className='breadcrumb-item active'>Business Partners</li>
         </ol>
-        <div className="title mb-3">
-          <h4 className="float-left">Business Partners</h4>
-          <Link to="/create-bp" className="btn btn-primary float-right mb-4">
+        <div className='title mb-3'>
+          <h4 className='float-left'>Business Partners</h4>
+          <Link to='/create-bp' className='btn btn-primary float-right mb-4'>
             Create Business Partner
           </Link>
         </div>
 
-        <table className="table table-bordered table-hover table-responsive-md animated fadeIn">
-          <thead className="thead-light">
+        <table className='table table-bordered table-hover table-responsive-md animated fadeIn'>
+          <thead className='thead-light'>
             <tr>
-              <th scope="col">Code </th>
-              <th scope="col">Type</th>
-              <th scope="col">Business Partner</th>
-              <th scope="col">Group</th>
-              <th scope="col">Balance</th>
-              <th scope="col">Orders</th>
-              <th scope="col">Status</th>
+              <th scope='col'>Code </th>
+              <th scope='col'>Type</th>
+              <th scope='col'>Business Partner</th>
+              <th scope='col'>Group</th>
+              <th scope='col'>Balance</th>
+              <th scope='col'>Orders</th>
+              <th scope='col'>Status</th>
             </tr>
           </thead>
 
@@ -53,7 +53,7 @@ const BusinessPartners = ({
               <tr key={bp._id}>
                 <td>
                   <Link
-                    title="View"
+                    title='View'
                     to={`/business-partner/${bp._id}`}
                     onClick={() => setCurrentBusinessPartner(bp)}
                   >
@@ -68,9 +68,9 @@ const BusinessPartners = ({
                 <td>
                   {" "}
                   {bp.active === true ? (
-                    <i className="fa fa-circle text-success"> Active</i>
+                    <i className='fa fa-circle text-success'> Active</i>
                   ) : (
-                    <i className="fa fa-circle text-danger"> Inactive</i>
+                    <i className='fa fa-circle text-danger'> Inactive</i>
                   )}
                 </td>
               </tr>
