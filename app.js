@@ -11,13 +11,15 @@ const compression = require("compression");
 
 // import Routes
 const userRouter = require("./routes/userRoutes");
-const bpRouter = require("./routes/bpRoutes");
+const customerRouter = require("./routes/customerRoutes");
+const supplierRouter = require("./routes/supplierRoutes");
 const itemRouter = require("./routes/itemRoutes");
 const itemGroupRouter = require("./routes/itemGroupRoutes");
 const inventoryRouter = require("./routes/inventoryRoutes");
 const warehouseRouter = require("./routes/warehouseRoutes");
 const uomRouter = require("./routes/uomRoutes");
-const bpGroupRouter = require("./routes/bpGroupRoutes");
+const customerGroupRouter = require("./routes/customerGroupRoutes");
+const supplierGroupRouter = require("./routes/supplierGroupRoutes");
 
 const app = express();
 
@@ -31,7 +33,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB Connected"));
 
@@ -48,7 +50,7 @@ if (process.env.NODE_ENV === "development") {
 const limiter = rateLimit({
   max: 500,
   windowMs: 60 * 60 * 1000,
-  message: "Too many requests from this IP, please try again in an hour!"
+  message: "Too many requests from this IP, please try again in an hour!",
 });
 app.use("/api", limiter);
 
@@ -70,8 +72,8 @@ app.use(
       "ratingsAverage",
       "maxGroupSize",
       "difficulty",
-      "price"
-    ]
+      "price",
+    ],
   })
 );
 
@@ -80,13 +82,15 @@ app.use(compression());
 //***************************/ROUTES***********************************
 
 app.use("/api/user", userRouter);
-app.use("/api/bp", bpRouter);
+app.use("/api/customer", customerRouter);
+app.use("/api/supplier", supplierRouter);
 app.use("/api/item", itemRouter);
 app.use("/api/item-group", itemGroupRouter);
 app.use("/api/inventory", inventoryRouter);
 app.use("/api/warehouse", warehouseRouter);
 app.use("/api/uom", uomRouter);
-app.use("/api/bp-group", bpGroupRouter);
+app.use("/api/customer-group", customerGroupRouter);
+app.use("/api/supplier-group", supplierGroupRouter);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

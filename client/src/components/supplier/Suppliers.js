@@ -1,20 +1,16 @@
-import React, { Fragment, useEffect, Suspense, lazy } from "react";
+import React, { Fragment, useEffect } from "react";
 import {
-  getBusinessPartners,
-  setCurrentBusinessPartner,
-} from "../../_actions/bpAction";
+  getSuppliers,
+  setCurrentSupplier,
+} from "../../_actions/supplierAction";
 
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-const BusinessPartners = ({
-  getBusinessPartners,
-  businessPartners,
-  setCurrentBusinessPartner,
-}) => {
+const Suppliers = ({ getSuppliers, suppliers, setCurrentSupplier }) => {
   useEffect(() => {
-    getBusinessPartners();
+    getSuppliers();
     //eslint-diable-next-line
   }, []);
 
@@ -25,13 +21,16 @@ const BusinessPartners = ({
           <li className='breadcrumb-item text-small'>
             <Link to='/'>Home</Link>
           </li>
-          <li className='breadcrumb-item'>Business Partner</li>
-          <li className='breadcrumb-item active'>Business Partners</li>
+          <li className='breadcrumb-item'>Customer/Supplier</li>
+          <li className='breadcrumb-item active'>Suppliers</li>
         </ol>
         <div className='title mb-3'>
-          <h4 className='float-left'>Business Partners</h4>
-          <Link to='/create-bp' className='btn btn-primary float-right mb-4'>
-            Create Business Partner
+          <h4 className='float-left'>Suppliers</h4>
+          <Link
+            to='/create-supplier'
+            className='btn btn-primary float-right mb-4'
+          >
+            Create Supplier
           </Link>
         </div>
 
@@ -39,8 +38,7 @@ const BusinessPartners = ({
           <thead className='thead-light'>
             <tr>
               <th scope='col'>Code </th>
-              <th scope='col'>Type</th>
-              <th scope='col'>Business Partner</th>
+              <th scope='col'>Supplier</th>
               <th scope='col'>Group</th>
               <th scope='col'>Balance</th>
               <th scope='col'>Orders</th>
@@ -49,25 +47,24 @@ const BusinessPartners = ({
           </thead>
 
           <tbody>
-            {businessPartners.map((bp) => (
-              <tr key={bp._id}>
+            {suppliers.map((sup) => (
+              <tr key={sup._id}>
                 <td>
                   <Link
                     title='View'
-                    to={`/business-partner/${bp._id}`}
-                    onClick={() => setCurrentBusinessPartner(bp)}
+                    to={`/supplier/${sup._id}`}
+                    onClick={() => setCurrentSupplier(sup)}
                   >
-                    {bp.bpCode && bp.bpCode}
+                    {sup.sCode && sup.sCode}
                   </Link>
                 </td>
-                <td>{bp.type && bp.type}</td>
-                <td>{bp.name && bp.name}</td>
-                <td>{bp.group && bp.group}</td>
+                <td>{sup.name && sup.name}</td>
+                <td>{sup.group && sup.group}</td>
                 <td>00.00</td>
                 <td>0</td>
                 <td>
                   {" "}
-                  {bp.active === true ? (
+                  {sup.active === true ? (
                     <i className='fa fa-circle text-success'> Active</i>
                   ) : (
                     <i className='fa fa-circle text-danger'> Inactive</i>
@@ -82,17 +79,17 @@ const BusinessPartners = ({
   );
 };
 
-BusinessPartners.propTypes = {
-  businessPartners: PropTypes.array.isRequired,
-  getBusinessPartners: PropTypes.func.isRequired,
-  setCurrentBusinessPartner: PropTypes.func.isRequired,
+Suppliers.propTypes = {
+  suppliers: PropTypes.array.isRequired,
+  getSuppliers: PropTypes.func.isRequired,
+  setCurrentSupplier: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  businessPartners: state.bp.businessPartners,
+  suppliers: state.supplier.suppliers,
 });
 
 export default connect(mapStateToProps, {
-  getBusinessPartners,
-  setCurrentBusinessPartner,
-})(withRouter(BusinessPartners));
+  getSuppliers,
+  setCurrentSupplier,
+})(withRouter(Suppliers));

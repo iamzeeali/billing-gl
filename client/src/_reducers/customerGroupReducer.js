@@ -1,45 +1,45 @@
 import * as types from "../_actions/types";
 
 const initialState = {
-  businessPartner: null,
-  businessPartners: [],
+  customerGroup: null,
+  customerGroups: [],
   error: {},
   filtered: null,
-  loading: true
+  loading: true,
 };
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case types.GET_BUSINESS_PARTNER:
+    case types.GET_CUSTOMER_GROUP:
       return {
         ...state,
-        businessPartner: payload,
-        loading: false
+        customerGroup: payload,
+        loading: false,
       };
-    case types.GET_BUSINESS_PARTNERS:
+    case types.GET_CUSTOMER_GROUPS:
       return {
         ...state,
-        businessPartners: payload,
-        loading: false
+        customerGroups: payload,
+        loading: false,
       };
-    case types.ADD_BUSINESS_PARTNER:
+    case types.ADD_CUSTOMER_GROUP:
       return {
         ...state,
-        businessPartner: payload,
-        loading: false
+        customerGroup: payload,
+        loading: false,
       };
-    case types.SET_CURRENT_BUSINESS_PARTNER:
+    case types.SET_CURRENT_CUSTOMER_GROUP:
       return {
         ...state,
-        businessPartner: action.payload
+        customerGroup: action.payload,
       };
-    case types.CLEAR_BUSINESS_PARTNER:
+    case types.CLEAR_CUSTOMER_GROUP:
       return {
         ...state,
-        businessPartner: null,
-        loading: false
+        customerGroup: null,
+        loading: false,
       };
 
     // case types.FILTER_ACTIVITY:
@@ -59,21 +59,21 @@ export default function(state = initialState, action) {
     case types.CLEAR_FILTER:
       return {
         ...state,
-        filtered: null
+        filtered: null,
       };
-    case types.DELETE_BUSINESS_PARTNER:
+    case types.DELETE_CUSTOMER_GROUP:
       return {
         ...state,
-        businessPartners: state.businessPartners.filter(
-          businessPartner => businessPartner._id !== action.payload
+        customerGroups: state.customerGroups.filter(
+          (cg) => cg._id !== action.payload
         ),
-        loading: false
+        loading: false,
       };
-    case types.BUSINESS_PARTNER_ERROR:
+    case types.CUSTOMER_GROUP_ERROR:
       return {
         ...state,
         error: payload,
-        loading: false
+        loading: false,
       };
     default:
       return state;

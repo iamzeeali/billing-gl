@@ -1,19 +1,15 @@
 const mongoose = require("mongoose");
 
-const businessPartnerSchema = new mongoose.Schema({
+const customerSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
   },
-  bpCode: {
+  cCode: {
     type: String,
     required: true,
   },
-  type: {
-    type: String,
-    enum: ["supplier", "customer"],
-    required: true,
-  },
+
   name: {
     type: String,
   },
@@ -66,12 +62,9 @@ const businessPartnerSchema = new mongoose.Schema({
   },
 });
 
-// businessPartnerSchema.pre(/^find/, function(next) {
+// customerSchema.pre(/^find/, function(next) {
 //   this.find({ active: { $ne: false } });
 //   next();
 // });
 
-module.exports = BusinessPartner = mongoose.model(
-  "BusinessPartner",
-  businessPartnerSchema
-);
+module.exports = Customer = mongoose.model("Customer", customerSchema);

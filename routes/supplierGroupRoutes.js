@@ -1,7 +1,7 @@
 const express = require("express");
 const authController = require("../controllers/authController");
-const bpGroupController = require("../controllers/bpGroupController");
-const BpGroup = require("../models/bpGroupModel");
+const supplierGroupController = require("../controllers/supplierGroupController");
+const SupplierGroup = require("../models/supplierGroupModel");
 
 const { check, validationResult } = require("express-validator");
 const catchAsync = require("../utils/catchAsync");
@@ -14,15 +14,11 @@ router.use(authController.protect);
 //Restrict all router after this middleware to admin only
 router.use(authController.restrictTo("super-admin", "user", "admin"));
 
-router.route("/").get(bpGroupController.getAllBpGroups);
+router.route("/").get(supplierGroupController.getAllSupplierGroups);
 
 router.post(
   "/",
-  [
-    check("group", "BP Group is required")
-      .not()
-      .isEmpty()
-  ],
+  [check("group", "Supplier Group is required").not().isEmpty()],
   catchAsync(async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -32,20 +28,20 @@ router.post(
     const { group, description } = req.body;
 
     try {
-      let bpg = await BpGroup.findOne({ group });
+      let sg = await SupplierGroup.findOne({ group });
 
-      if (bpg) {
-        return res.status(400).json({ msg: "BP Group already exists" });
+      if (sg) {
+        return res.status(400).json({ msg: "Supplier Group already exists" });
       }
 
-      bpg = new BpGroup({
+      sg = new SupplierGroup({
         group,
         description,
-        user: req.user.id
+        user: req.user.id,
       });
 
-      let BPG = await bpg.save();
-      res.json(BPG);
+      let SG = await sg.save();
+      res.json(SG);
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server Error");
@@ -58,11 +54,11 @@ router.post(
 router.use(authController.restrictTo("super-admin"));
 router
   .route("/:id")
-  .get(bpGroupController.getBpGroup)
-  .patch(bpGroupController.updateBpGroup)
+  .get(supplierGroupController.getSupplierGroup)
+  .patch(supplierGroupController.updateSupplierGroup)
   .delete(
     authController.restrictTo("super-admin"),
-    bpGroupController.deleteBpGroup
+    supplierGroupController.deleteSupplierGroup
   );
 
 module.exports = router;

@@ -16,10 +16,23 @@ import Login from "./components/authentication/Login";
 import Landing from "./components/UI/Landing";
 import Dashboard from "./components/dashboard/dashboard";
 
-import BusinessPartners from "./components/businessPartner/BusinessPartners";
-import BusinessPartner from "./components/businessPartner/BusinessPartner";
-import CreateBP from "./components/businessPartner/CreateBP";
+// Customer
 
+import Customers from "./components/customer/Customers";
+import Customer from "./components/customer/Customer";
+import CreateCustomer from "./components/customer/CreateCustomer";
+import CustomerGroups from "./components/customer/CustomerGroups";
+import CreateCustomerGroup from "./components/customer/CreateCustomerGroup";
+
+// Supplier
+
+import Suppliers from "./components/supplier/Suppliers";
+import Supplier from "./components/supplier/Supplier";
+import CreateSupplier from "./components/supplier/CreateSupplier";
+import SupplierGroups from "./components/supplier/SupplierGroups";
+import CreateSupplierGroup from "./components/supplier/CreateSupplierGroup";
+
+// Inventory
 import Items from "./components/inventory/item/Items";
 import CreateItem from "./components/inventory/item/CreateItem";
 
@@ -32,10 +45,12 @@ import CreateWarehouse from "./components/inventory/warehouse/CreateWarehouse";
 import Uoms from "./components/inventory/uom/Uoms";
 import CreateUom from "./components/inventory/uom/CreateUom";
 
-import BpGroups from "./components/businessPartner/bpGroup/bpGroups";
-import CreateBpGroup from "./components/businessPartner/bpGroup/CreateBpGroup";
-
 import Inventory from "./components/inventory/Inventory";
+
+// Purchase
+
+import CreatePQ from "./components/purchase/pq/CreatePQ";
+import PQs from "./components/purchase/pq/PQs";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -51,45 +66,77 @@ const App = () => {
       <Alert />
 
       <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/login" component={Login} />
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/login' component={Login} />
+        <PrivateRoute exact path='/dashboard' component={Dashboard} />
+
+        {/* Customer */}
+        <PrivateRoute exact path='/customers' component={Customers} />
         <PrivateRoute
           exact
-          path="/business-partners"
-          component={BusinessPartners}
+          path='/create-customer'
+          component={CreateCustomer}
         />
-        <PrivateRoute exact path="/create-bp" component={CreateBP} />
+        <PrivateRoute exact path={`/customer/:id`} component={Customer} />
+
+        {/* Supplier */}
+
+        <PrivateRoute exact path='/suppliers' component={Suppliers} />
         <PrivateRoute
           exact
-          path={`/business-partner/:id`}
-          component={BusinessPartner}
+          path='/create-supplier'
+          component={CreateSupplier}
         />
+        <PrivateRoute exact path={`/supplier/:id`} component={Supplier} />
 
-        <PrivateRoute exact path="/items" component={Items} />
-        <PrivateRoute exact path="/create-item" component={CreateItem} />
+        {/* Item */}
+        <PrivateRoute exact path='/items' component={Items} />
+        <PrivateRoute exact path='/create-item' component={CreateItem} />
 
-        <PrivateRoute exact path="/item-groups" component={ItemGroups} />
-        <PrivateRoute exact path="/inventory" component={Inventory} />
+        <PrivateRoute exact path='/item-groups' component={ItemGroups} />
+        <PrivateRoute exact path='/inventory' component={Inventory} />
 
         <PrivateRoute
           exact
-          path="/create-item-group"
+          path='/create-item-group'
           component={CreateItemGroup}
         />
 
-        <PrivateRoute exact path="/warehouses" component={Warehouses} />
+        <PrivateRoute exact path='/warehouses' component={Warehouses} />
         <PrivateRoute
           exact
-          path="/create-warehouse"
+          path='/create-warehouse'
           component={CreateWarehouse}
         />
 
-        <PrivateRoute exact path="/uoms" component={Uoms} />
-        <PrivateRoute exact path="/create-uom" component={CreateUom} />
+        <PrivateRoute exact path='/uoms' component={Uoms} />
+        <PrivateRoute exact path='/create-uom' component={CreateUom} />
 
-        <PrivateRoute exact path="/bp-groups" component={BpGroups} />
-        <PrivateRoute exact path="/create-bp-group" component={CreateBpGroup} />
+        <PrivateRoute
+          exact
+          path='/customer-groups'
+          component={CustomerGroups}
+        />
+        <PrivateRoute
+          exact
+          path='/create-customer-group'
+          component={CreateCustomerGroup}
+        />
+
+        <PrivateRoute
+          exact
+          path='/supplier-groups'
+          component={SupplierGroups}
+        />
+
+        <PrivateRoute
+          exact
+          path='/create-supplier-group'
+          component={CreateSupplierGroup}
+        />
+
+        <PrivateRoute exact path='/purchase-quotation' component={PQs} />
+        <PrivateRoute exact path='/create-pq' component={CreatePQ} />
 
         <Route component={NotFound} />
       </Switch>

@@ -1,9 +1,9 @@
 const express = require("express");
-const authController = require("./../controllers/authController");
-const bpController = require("./../controllers/bpController");
+const authController = require("../controllers/authController");
+const supplierController = require("./../controllers/supplierController");
 const { check, validationResult } = require("express-validator");
 const catchAsync = require("../utils/catchAsync");
-const BusinessPartner = require("../models/businessPartnerModel");
+const supplierModel = require("../models/supplierModel");
 
 const router = express.Router();
 
@@ -13,15 +13,14 @@ router.use(authController.protect);
 //Restrict all router after this middleware to admin only
 router.use(authController.restrictTo("super-admin", "user", "admin"));
 
-router.route("/").get(bpController.getAllBusinessPartners);
+router.route("/").get(supplierController.getAllSuppliers);
 
 router.post(
   "/",
   [
-    check("bpCode", "Business Partner Code is required").not().isEmpty(),
-    check("type", "Business Partner Type is Required").not().isEmpty(),
-    check("name", "Business Partner Name is Required").not().isEmpty(),
-    check("group", "Business Partner Group is Required").not().isEmpty(),
+    check("sCode", "Supplier Code is required").not().isEmpty(),
+    check("name", "Supplier Name is Required").not().isEmpty(),
+    check("group", "Supplier Group is Required").not().isEmpty(),
   ],
   catchAsync(async (req, res, next) => {
     const errors = validationResult(req);
@@ -31,8 +30,7 @@ router.post(
     }
 
     const {
-      bpCode,
-      type,
+      sCode,
       name,
       group,
       phone1,
@@ -65,15 +63,14 @@ router.post(
     } = req.body;
 
     try {
-      let bp = await BusinessPartner.findOne({ bpCode });
+      let supplier = await supplierModel.findOne({ sCode });
 
-      if (bp) {
-        return res.status(400).json({ msg: "Business Partner already exists" });
+      if (supplier) {
+        return res.status(400).json({ msg: "Supplier already exists" });
       }
 
-      bp = new BusinessPartner({
-        bpCode,
-        type,
+      supplier = new supplierModel({
+        sCode,
         name,
         group,
         phone1,
@@ -106,8 +103,8 @@ router.post(
         user: req.user.id,
       });
 
-      let BUSINESSPARTNER = await bp.save();
-      res.json(BUSINESSPARTNER);
+      let SUPPLIER = await supplier.save();
+      res.json(SUPPLIER);
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server Error");
@@ -120,10 +117,10 @@ router.post(
 router.use(authController.restrictTo("super-admin"));
 router
   .route("/:id")
-  .get(bpController.getBusinessPartner)
-  .patch(bpController.updateBusinessPartner)
+  .get(supplierController.getSupplier)
+  .patch(supplierController.updateSupplier)
   .delete(
     authController.restrictTo("super-admin"),
-    bpController.deleteBusinessPartner
+    supplierController.deleteSupplier
   );
 module.exports = router;

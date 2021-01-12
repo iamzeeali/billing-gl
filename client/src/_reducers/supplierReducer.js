@@ -1,45 +1,45 @@
 import * as types from "../_actions/types";
 
 const initialState = {
-  bpGroup: null,
-  bpGroups: [],
+  supplier: null,
+  suppliers: [],
   error: {},
   filtered: null,
-  loading: true
+  loading: true,
 };
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case types.GET_BP_GROUP:
+    case types.GET_SUPPLIER:
       return {
         ...state,
-        bpGroup: payload,
-        loading: false
+        supplier: payload,
+        loading: false,
       };
-    case types.GET_BP_GROUPS:
+    case types.GET_SUPPLIERS:
       return {
         ...state,
-        bpGroups: payload,
-        loading: false
+        suppliers: payload,
+        loading: false,
       };
-    case types.ADD_BP_GROUP:
+    case types.ADD_SUPPLIER:
       return {
         ...state,
-        bpGroup: payload,
-        loading: false
+        supplier: payload,
+        loading: false,
       };
-    case types.SET_CURRENT_BP_GROUP:
+    case types.SET_CURRENT_SUPPLIER:
       return {
         ...state,
-        bpGroup: action.payload
+        supplier: action.payload,
       };
-    case types.CLEAR_BP_GROUP:
+    case types.CLEAR_SUPPLIER:
       return {
         ...state,
-        bpGroup: null,
-        loading: false
+        supplier: null,
+        loading: false,
       };
 
     // case types.FILTER_ACTIVITY:
@@ -59,19 +59,21 @@ export default function(state = initialState, action) {
     case types.CLEAR_FILTER:
       return {
         ...state,
-        filtered: null
+        filtered: null,
       };
-    case types.DELETE_BP_GROUP:
+    case types.DELETE_SUPPLIER:
       return {
         ...state,
-        bpGroups: state.bpGroups.filter(bpg => bpg._id !== action.payload),
-        loading: false
+        suppliers: state.suppliers.filter(
+          (supplier) => supplier._id !== action.payload
+        ),
+        loading: false,
       };
-    case types.BP_GROUP_ERROR:
+    case types.SUPPLIER_ERROR:
       return {
         ...state,
         error: payload,
-        loading: false
+        loading: false,
       };
     default:
       return state;
