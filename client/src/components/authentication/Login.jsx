@@ -29,55 +29,55 @@ const Login = ({ login, isAuthenticated }) => {
       {false ? (
         <Spinner />
       ) : (
-        <div className="container animated bounceInDown">
-          <div className="row">
-            <div className="col-md-12 py-5 d-flex flex-column justify-content-center">
-              <div className="row">
-                <div className="col-lg-6 col-md-8 mx-auto">
-                  <div className="card shadow">
-                    <div className="card-header">
-                      <h1 className="mb-0 text-center lead">
+        <div className='container animated bounceInDown my-5'>
+          <div className='row'>
+            <div className='col-md-12 py-5 d-flex flex-column justify-content-center'>
+              <div className='row'>
+                <div className='col-lg-6 col-md-8 mx-auto'>
+                  <div className='card shadow'>
+                    <div className='card-header'>
+                      <h1 className='mb-0 text-center lead'>
                         Hi! Login to Continue...
                       </h1>
                     </div>
-                    <div className="card-body">
-                      <form className="form" onSubmit={(e) => onSubmit(e)}>
-                        <div className="form-group">
+                    <div className='card-body'>
+                      <form className='form' onSubmit={(e) => onSubmit(e)}>
+                        <div className='form-group'>
                           <input
-                            type="email"
-                            className="form-control form-control-lg rounded-0"
-                            name="email"
+                            type='email'
+                            className=' form-control form-control-lg rounded-1'
+                            name='email'
                             value={email}
-                            placeholder="Enter Email"
+                            placeholder='Enter Email'
                             onChange={(e) => onChange(e)}
                             required
                           />
                         </div>
-                        <div className="form-group">
+                        <div className='form-group'>
                           <input
-                            type="password"
-                            className="form-control form-control-lg rounded-0"
-                            placeholder="Password"
-                            name="password"
+                            type='password'
+                            className='form-control form-control-lg rounded-1'
+                            placeholder='Password'
+                            name='password'
                             value={password}
                             onChange={(e) => onChange(e)}
                             required
                           />
-                          <div className="invalid-feedback">
+                          <div className='invalid-feedback'>
                             Enter your password too!
                           </div>
                         </div>
                         <div>
-                          <div class="form-group">
-                            <div class="custom-control custom-checkbox">
+                          <div class='form-group'>
+                            <div class='custom-control custom-checkbox'>
                               <input
-                                type="checkbox"
-                                class="custom-control-input"
-                                id="customCheck2"
+                                type='checkbox'
+                                class='custom-control-input'
+                                id='customCheck2'
                               />
                               <label
-                                class="custom-control-label"
-                                for="customCheck2"
+                                class='custom-control-label'
+                                for='customCheck2'
                               >
                                 Remember me?
                               </label>
@@ -85,9 +85,9 @@ const Login = ({ login, isAuthenticated }) => {
                           </div>
                         </div>
                         <button
-                          type="submit"
-                          className="btn btn-primary btn-lg btn-block"
-                          id="btnLogin"
+                          type='submit'
+                          className='btn btn-primary btn-lg btn-block'
+                          id='btnLogin'
                         >
                           Login
                         </button>

@@ -54,47 +54,359 @@ class Sidebar extends Component {
           >
             <span class='navbar-toggler-icon'></span>
           </button>
+          <div class='collapse navbar-collapse' id='navbarColor01'>
+            <ul class='navbar-nav mr-auto'>
+              <li class='nav-item active'>
+                <Link to='/dashboard' className='nav-link' title='Dashboard'>
+                  <i className='fa fa-tachometer-alt'></i>
+                </Link>
+              </li>
 
-          <div class='collapse navbar-collapse' id='navbarColor01'></div>
-          <span class='navbar-text'>Hi, {user && user.name}</span>
-          <Link
-            className='navbar-text nav-link'
-            onClick={this.onLogoutHandler.bind(this)}
-          >
-            <i class='fas fa-sign-out-alt'></i> Logout
-          </Link>
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link'
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='Purchase'
+                >
+                  <i className='fa fa-shopping-cart'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/purchase-quotation' className='dropdown-item'>
+                      Purchase Quotation
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to='/purchase-order' className='dropdown-item'>
+                      Purchase Order
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/goods-receipt' className='dropdown-item'>
+                      Goods Receipt
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/goods-return' className='dropdown-item'>
+                      Goods Return
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/purchase-invoice' className='dropdown-item'>
+                      Purchase Invoice
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link '
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='Sales'
+                >
+                  <i className='fa  fa-dollar-sign'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/sales-enquiry' className='dropdown-item'>
+                      Sales Enquiry
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/sales-quotation' className='dropdown-item'>
+                      Sales Quotation
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to='/sales-order' className='dropdown-item'>
+                      Sales Order
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/delivery' className='dropdown-item'>
+                      Delivery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/return' className='dropdown-item'>
+                      Return
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/sales-invoice' className='dropdown-item'>
+                      Sales Invoice
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link'
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='Customer'
+                >
+                  <i className='far fa-handshake'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/customers' className='dropdown-item'>
+                      Customers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/create-customer' className='dropdown-item'>
+                      Create Customer
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/customer-groups' className='dropdown-item'>
+                      Customer Group
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link'
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='Supplier'
+                >
+                  <i className='fa fa-users'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/suppliers' className='dropdown-item'>
+                      Suppliers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/create-supplier' className='dropdown-item'>
+                      Create Supplier
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/supplier-groups' className='dropdown-item'>
+                      Supplier Group
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link'
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='Inventory'
+                >
+                  <i className='fa fa-box-open'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/items' className='dropdown-item'>
+                      Items
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/create-item' className='dropdown-item'>
+                      Create Item
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/item-groups' className='dropdown-item'>
+                      Item Group
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/inventory' className='dropdown-item'>
+                      Inventory
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/warehouses' className='dropdown-item'>
+                      Warehouse
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/uoms' className='dropdown-item'>
+                      UoM
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link'
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='Banking'
+                >
+                  <i className='fa fa-university'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/employees' className='dropdown-item'>
+                      Receive Payment
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/create-employee' className='dropdown-item'>
+                      Deposit
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/attendance' className='dropdown-item'>
+                      Send Payment
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link'
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='HR'
+                >
+                  <i className='far fa-user'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/employees' className='dropdown-item'>
+                      Employees
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/create-employee' className='dropdown-item'>
+                      Create Employee
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/attendance' className='dropdown-item'>
+                      Attendance
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/payroll' className='dropdown-item'>
+                      Payroll
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li className='nav-item  active dropdown'>
+                <Link
+                  className='nav-link'
+                  data-toggle='dropdown'
+                  href='#'
+                  role='button'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  title='Reports'
+                >
+                  <i className='fa fa-chart-line'></i>
+                </Link>
+                <div className='dropdown-menu'>
+                  <li>
+                    <Link to='/sales-order' className='dropdown-item'>
+                      Sales Report
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/sales-invoice' className='dropdown-item'>
+                      Purcase Report
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to='/sales-invoice' className='dropdown-item'>
+                      Profit & Loss Report
+                    </Link>
+                  </li>
+                </div>
+              </li>
+
+              <li class='nav-item active'>
+                <Link to='/settings' className='nav-link' title='Settings'>
+                  <i className='fa fa-cog'></i>
+                </Link>
+              </li>
+            </ul>
+
+            <div className='form-inline my-2 my-lg-0'>
+              <span className='navbar-text'>Hi, {user && user.name}</span>
+
+              <Link
+                className='navbar-text nav-link'
+                onClick={this.onLogoutHandler.bind(this)}
+              >
+                <i className='fas fa-sign-out-alt'></i> Logout
+              </Link>
+            </div>
+          </div>
         </nav>
-        <div class='page-wrapper chiller-theme toggled'>
-          <a id='show-sidebar' class='btn btn-sm btn-dark' href='#'>
-            <i class='fas fa-bars'></i>
+        <div className='page-wrapper chiller-theme toggled'>
+          <a id='show-sidebar' className='btn btn-sm btn-dark' href='#'>
+            <i className='fas fa-bars'></i>
           </a>
-          <nav id='sidebar' class='sidebar-wrapper'>
-            <div class='sidebar-content '>
-              <div class='sidebar-brand float-right'>
+          <nav id='sidebar' className='sidebar-wrapper'>
+            <div className='sidebar-content '>
+              <div className='sidebar-brand float-right'>
                 <div id='close-sidebar'>
-                  <i class='fas fa-times-circle'></i>
+                  <i className='fas fa-times-circle'></i>
                 </div>
               </div>
 
-              <div class='sidebar-menu'>
+              <div className='sidebar-menu'>
                 <ul>
-                  <li class='header-menu p-3 text-light'>
-                    <i class='fa fa-circle text-success'></i>{" "}
+                  <li className='header-menu p-3 text-light'>
+                    <i className='fa fa-circle text-success'></i>{" "}
                     {user && user.name}, Globus Labs <br />{" "}
                   </li>
-                  <li class='mt-4'>
+                  <li className='mt-4'>
                     <Link to='/dashboard'>
-                      <i class='fa fa-tachometer-alt'></i>
+                      <i className='fa fa-tachometer-alt'></i>
                       <span>Dashboard</span>
                     </Link>
                   </li>
 
-                  <li class='sidebar-dropdown'>
+                  <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='fa fa-shopping-cart'></i>
+                      <i className='fa fa-shopping-cart'></i>
                       <span>Purchase</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/purchase-quotation'>
@@ -118,12 +430,12 @@ class Sidebar extends Component {
                     </div>
                   </li>
 
-                  <li class='sidebar-dropdown'>
+                  <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='fa  fa-dollar-sign'></i>
+                      <i className='fa  fa-dollar-sign'></i>
                       <span>Sales</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/sales-enquiry'>Sales Enquiry</Link>
@@ -148,12 +460,12 @@ class Sidebar extends Component {
                     </div>
                   </li>
 
-                  <li class='sidebar-dropdown'>
+                  <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='far fa-handshake'></i>
+                      <i className='far fa-handshake'></i>
                       <span>Customer</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/customers'>Customers</Link>
@@ -168,12 +480,12 @@ class Sidebar extends Component {
                     </div>
                   </li>
 
-                  <li class='sidebar-dropdown'>
+                  <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='far fa-handshake'></i>
+                      <i className='fa fa-users'></i>
                       <span>Supplier/Vendor</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/suppliers'>Suppliers</Link>
@@ -188,12 +500,12 @@ class Sidebar extends Component {
                     </div>
                   </li>
 
-                  <li class='sidebar-dropdown'>
+                  <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='fa fa-box-open'></i>
+                      <i className='fa fa-box-open'></i>
                       <span>Inventory</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/items'>Items</Link>
@@ -219,10 +531,10 @@ class Sidebar extends Component {
 
                   <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='fa fa-university'></i>
+                      <i className='fa fa-university'></i>
                       <span>Banking</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/employees'>Receive Payment</Link>
@@ -237,12 +549,12 @@ class Sidebar extends Component {
                     </div>
                   </li>
 
-                  <li class='sidebar-dropdown'>
+                  <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='far fa-user'></i>
+                      <i className='far fa-user'></i>
                       <span>Human Resource (HR)</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/employees'>Employees</Link>
@@ -260,12 +572,12 @@ class Sidebar extends Component {
                     </div>
                   </li>
 
-                  <li class='sidebar-dropdown'>
+                  <li className='sidebar-dropdown'>
                     <a href='#'>
-                      <i class='fa fa-chart-line'></i>
+                      <i className='fa fa-chart-line'></i>
                       <span>Reports</span>
                     </a>
-                    <div class='sidebar-submenu'>
+                    <div className='sidebar-submenu'>
                       <ul>
                         <li>
                           <Link to='/sales-order'>Sales Report</Link>
@@ -282,36 +594,36 @@ class Sidebar extends Component {
 
                   <li>
                     <a href='#'>
-                      <i class='fa fa-cog'></i>
+                      <i className='fa fa-cog'></i>
                       <span>Settings</span>
                     </a>
                   </li>
 
                   <li>
                     <a href='#'>
-                      <i class='fa fa-question-circle'></i>
+                      <i className='fa fa-question-circle'></i>
                       <span>Help & Support</span>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class='sidebar-footer'>
+            <div className='sidebar-footer'>
               <a href='#'>
-                <i class='fa fa-bell'></i>
-                <span class='badge badge-pill badge-warning notification'>
+                <i className='fa fa-bell'></i>
+                <span className='badge badge-pill badge-warning notification'>
                   3
                 </span>
               </a>
               <a href='#'>
-                <i class='fa fa-envelope'></i>
-                <span class='badge badge-pill badge-success notification'>
+                <i className='fa fa-envelope'></i>
+                <span className='badge badge-pill badge-success notification'>
                   7
                 </span>
               </a>
               <a href='#'>
-                <i class='fa fa-cog'></i>
-                <span class='badge-sonar'></span>
+                <i className='fa fa-cog'></i>
+                <span className='badge-sonar'></span>
               </a>
               <a
                 href=''
@@ -321,23 +633,23 @@ class Sidebar extends Component {
                 data-placement='top'
                 title='Logout'
               >
-                <i class='fa fa-power-off'></i>
+                <i className='fa fa-power-off'></i>
               </a>
             </div>
           </nav>{" "}
-          <main class='page-content'>{this.props.children}</main>
+          <main className='page-content'>{this.props.children}</main>
         </div>
       </Fragment>
     );
 
     const guestLinks = (
       <Fragment>
-        <nav class='navbar fixed-top navbar-expand-lg navbar-dark bg-primary'>
-          <Link class='navbar-brand lead' to='/'>
+        <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-primary'>
+          <Link className='navbar-brand lead' to='/'>
             bigbiz{" "}
           </Link>
           <button
-            class='navbar-toggler'
+            className='navbar-toggler'
             type='button'
             data-toggle='collapse'
             data-target='#navbarColor01'
@@ -345,23 +657,23 @@ class Sidebar extends Component {
             aria-expanded='false'
             aria-label='Toggle navigation'
           >
-            <span class='navbar-toggler-icon'></span>
+            <span className='navbar-toggler-icon'></span>
           </button>
 
-          <div class='collapse navbar-collapse' id='navbarColor01'>
-            <ul class='navbar-nav mr-auto'>
-              <li class='nav-item active'>
-                <Link class='nav-link' to='/'>
-                  Home <span class='sr-only'>(current)</span>
+          <div className='collapse navbar-collapse' id='navbarColor01'>
+            <ul className='navbar-nav mr-auto'>
+              <li className='nav-item active'>
+                <Link className='nav-link' to='/'>
+                  Home <span className='sr-only'>(current)</span>
                 </Link>
               </li>
-              <li class='nav-item'>
-                <a class='nav-link' href='#'>
+              <li className='nav-item'>
+                <a className='nav-link' href='#'>
                   About
                 </a>
               </li>
-              <li class='nav-item'>
-                <a class='nav-link' href='#'>
+              <li className='nav-item'>
+                <a className='nav-link' href='#'>
                   FAQ
                 </a>
               </li>

@@ -99,103 +99,103 @@ const CreateItem = ({
   };
 
   return (
-    <main className="container">
-      <ol className="breadcrumb">
-        <li className="breadcrumb-item text-small">
-          <Link to="/">Home</Link>
+    <main className='container'>
+      <ol className='breadcrumb'>
+        <li className='breadcrumb-item text-small'>
+          <Link to='/'>Home</Link>
         </li>
-        <li className="breadcrumb-item">Inventory</li>
-        <li className="breadcrumb-item active">Create Item</li>
+        <li className='breadcrumb-item'>Inventory</li>
+        <li className='breadcrumb-item active'>Create Item</li>
       </ol>
-      <div className="title mb-3">
-        <h4 className="float-left">Create Item</h4>
-        <Link to="/items" className="btn btn-primary float-right ">
+      <div className='title mb-3'>
+        <h4 className='float-left'>Create Item</h4>
+        <Link to='/items' className='btn btn-primary float-right '>
           Items
         </Link>
       </div>
 
       <br />
 
-      <form className="mt-5" onSubmit={(e) => onSubmitHandler(e)}>
-        <div className="">
-          <p className="mx-auto font-weight-bold">Item Information</p>
+      <form className='mt-5' onSubmit={(e) => onSubmitHandler(e)}>
+        <div className=''>
+          <p className='mx-auto font-weight-bold'>Item Information</p>
 
-          <div class="form-group">
-            <div class="custom-control custom-radio">
+          <div class='form-group'>
+            <div class='custom-control custom-radio'>
               <input
-                type="radio"
+                type='radio'
                 value={type}
-                id="customRadio1"
-                name="type"
-                class="custom-control-input"
+                id='customRadio1'
+                name='type'
+                class='custom-control-input'
                 onChange={(e) => onToggleType(e)}
                 checked={type === "item" ? true : false}
               />
-              <label class="custom-control-label" for="customRadio1">
+              <label class='custom-control-label' for='customRadio1'>
                 Item
               </label>
             </div>
-            <div class="custom-control custom-radio">
+            <div class='custom-control custom-radio'>
               <input
-                type="radio"
+                type='radio'
                 value={type}
-                id="customRadio2"
-                name="type"
-                class="custom-control-input"
+                id='customRadio2'
+                name='type'
+                class='custom-control-input'
                 onChange={(e) => onToggleType(e)}
                 checked={type === "service" ? true : false}
               />
-              <label class="custom-control-label" for="customRadio2">
+              <label class='custom-control-label' for='customRadio2'>
                 Service
               </label>
             </div>
           </div>
 
-          <div class="form-group row">
-            <label class="col-form-label col-sm-1">Code</label>
-            <div class="col-sm-5">
+          <div class='form-group row'>
+            <label class='col-form-label col-sm-1'>Code</label>
+            <div class='col-sm-5'>
               <input
-                className="form-control "
-                name="itemCode"
-                type="text"
-                placeholder="Item Code"
+                className='form-control '
+                name='itemCode'
+                type='text'
+                placeholder='Item Code'
                 value={itemCode}
                 onChange={(e) => onChangeHandler(e)}
                 readOnly={false}
                 required
                 autoFocus
               />
-              <small id="code_error" className="text-danger"></small>
+              <small id='code_error' className='text-danger'></small>
             </div>
 
-            <label class="col-form-label col-sm-1">Name/SKU</label>
-            <div class="input-group col-sm-5">
+            <label class='col-form-label col-sm-1'>Name/SKU</label>
+            <div class='input-group col-sm-5'>
               <input
-                className="form-control "
-                name="name"
-                type="text"
-                placeholder="Item Name/SKU"
+                className='form-control '
+                name='name'
+                type='text'
+                placeholder='Item Name/SKU'
                 value={name}
                 onChange={(e) => onChangeHandler(e)}
                 readOnly={false}
                 required
               />
-              <small id="name_error" className="text-danger"></small>
+              <small id='name_error' className='text-danger'></small>
             </div>
           </div>
 
-          <div class="form-group row">
-            <label class="col-form-label col-sm-1">Group</label>
-            <div class="col-sm-5">
+          <div class='form-group row'>
+            <label class='col-form-label col-sm-1'>Group</label>
+            <div class='col-sm-5'>
               <select
-                name="group"
-                id=""
-                class="form-control "
+                name='group'
+                id=''
+                class='form-control '
                 value={group}
                 onChange={(e) => onChangeHandler(e)}
                 required
               >
-                <option value="" disabled selected hidden>
+                <option value='' disabled selected hidden>
                   Select Item Group
                 </option>
                 {itemGroups.map((ig) => (
@@ -204,19 +204,19 @@ const CreateItem = ({
                   </option>
                 ))}
               </select>
-              <Link to="/create-item-group">
+              <Link to='/create-item-group'>
                 {" "}
-                <i className="fa fa-plus-circle"></i>{" "}
+                <i className='fa fa-plus-circle'></i>{" "}
               </Link>
-              <small id="group_error" className="text-danger"></small>
+              <small id='group_error' className='text-danger'></small>
             </div>
-            <label class="col-form-label col-sm-1">Serial</label>
-            <div class="col-sm-5">
+            <label class='col-form-label col-sm-1'>Serial</label>
+            <div class='col-sm-5'>
               <input
-                className="form-control "
-                name="serial"
-                type="text"
-                placeholder="Item serial"
+                className='form-control '
+                name='serial'
+                type='text'
+                placeholder='Item serial'
                 value={serial}
                 onChange={(e) => onChangeHandler(e)}
                 readOnly={false}
@@ -225,18 +225,18 @@ const CreateItem = ({
             </div>
           </div>
 
-          <div class="form-group row">
-            <label class="col-form-label col-sm-1">UoM</label>
-            <div class="col-sm-5">
+          <div class='form-group row'>
+            <label class='col-form-label col-sm-1'>UoM</label>
+            <div class='col-sm-5'>
               <select
-                name="uom"
-                id=""
-                class="form-control "
+                name='uom'
+                id=''
+                class='form-control '
                 value={uom}
                 onChange={(e) => onChangeHandler(e)}
                 required
               >
-                <option value="" disabled selected hidden>
+                <option value='' disabled selected hidden>
                   Select UoM
                 </option>
                 {uoms.map((um) => (
@@ -245,20 +245,20 @@ const CreateItem = ({
                   </option>
                 ))}
               </select>
-              <Link to="/create-uom">
+              <Link to='/create-uom'>
                 {" "}
-                <i className="fa fa-plus-circle"></i>{" "}
+                <i className='fa fa-plus-circle'></i>{" "}
               </Link>
-              <small id="group_error" className="text-danger"></small>
+              <small id='group_error' className='text-danger'></small>
             </div>
 
-            <label class="col-form-label col-sm-1">Price</label>
-            <div class="col-sm-5">
+            <label class='col-form-label col-sm-1'>Price</label>
+            <div class='col-sm-5'>
               <input
-                className="form-control "
-                name="unitPrice"
-                type="text"
-                placeholder="Item Unit Price"
+                className='form-control '
+                name='unitPrice'
+                type='text'
+                placeholder='Item Unit Price'
                 value={unitPrice}
                 onChange={(e) => onChangeHandler(e)}
                 readOnly={false}
@@ -266,27 +266,27 @@ const CreateItem = ({
             </div>
           </div>
 
-          <div class="form-group row">
-            <label class="col-form-label col-sm-1">Description</label>
-            <div class="col-sm-5">
+          <div class='form-group row'>
+            <label class='col-form-label col-sm-1'>Description</label>
+            <div class='col-sm-5'>
               <textarea
-                className="form-control "
-                name="description"
-                type="text"
-                placeholder="Item description"
+                className='form-control '
+                name='description'
+                type='text'
+                placeholder='Item description'
                 value={description}
                 onChange={(e) => onChangeHandler(e)}
                 readOnly={false}
               />
             </div>
 
-            <label class="col-form-label col-sm-1">HSN</label>
-            <div class="col-sm-5">
+            <label class='col-form-label col-sm-1'>HSN</label>
+            <div class='col-sm-5'>
               <input
-                className="form-control "
-                name="hsn"
-                type="text"
-                placeholder="HSN/SAC"
+                className='form-control '
+                name='hsn'
+                type='text'
+                placeholder='HSN/SAC'
                 value={hsn}
                 onChange={(e) => onChangeHandler(e)}
                 readOnly={false}
@@ -294,52 +294,52 @@ const CreateItem = ({
             </div>
           </div>
 
-          <div class="form-group row">
-            <div class="col-sm-5">
-              <div class="custom-control custom-checkbox">
+          <div class='form-group row'>
+            <div class='col-sm-5'>
+              <div class='custom-control custom-checkbox'>
                 <input
-                  type="checkbox"
-                  class="form-check-input"
+                  type='checkbox'
+                  class='form-check-input'
                   value={purchaseItem}
-                  name="purchaseItem"
+                  name='purchaseItem'
                   onClick={(e) => onTogglePurchaseItem(e)}
                   checked={purchaseItem}
-                  class="custom-control-input"
-                  id="customCheck1"
+                  class='custom-control-input'
+                  id='customCheck1'
                 />
-                <label class="custom-control-label" for="customCheck1">
+                <label class='custom-control-label' for='customCheck1'>
                   Purchase Item
                 </label>
               </div>
 
-              <div class="custom-control custom-checkbox">
+              <div class='custom-control custom-checkbox'>
                 <input
-                  type="checkbox"
-                  class="form-check-input"
+                  type='checkbox'
+                  class='form-check-input'
                   value={salesItem}
-                  name="salesItem"
+                  name='salesItem'
                   onClick={(e) => onToggleSalesItem(e)}
                   checked={salesItem}
-                  class="custom-control-input"
-                  id="customCheck2"
+                  class='custom-control-input'
+                  id='customCheck2'
                 />
-                <label class="custom-control-label" for="customCheck2">
+                <label class='custom-control-label' for='customCheck2'>
                   Sales Item
                 </label>
               </div>
 
-              <div class="custom-control custom-checkbox">
+              <div class='custom-control custom-checkbox'>
                 <input
-                  type="checkbox"
-                  class="form-check-input"
+                  type='checkbox'
+                  class='form-check-input'
                   value={inventoryItem}
-                  name="inventoryItem"
+                  name='inventoryItem'
                   onClick={(e) => onToggleInventoryItem(e)}
                   checked={inventoryItem}
-                  class="custom-control-input"
-                  id="customCheck3"
+                  class='custom-control-input'
+                  id='customCheck3'
                 />
-                <label class="custom-control-label" for="customCheck3">
+                <label class='custom-control-label' for='customCheck3'>
                   Inventory Item
                 </label>
               </div>
@@ -348,8 +348,8 @@ const CreateItem = ({
 
           <button
             disabled={false}
-            type="submit"
-            className="btn btn-primary btn-block"
+            type='submit'
+            className='btn btn-primary btn-block'
           >
             Submit
           </button>

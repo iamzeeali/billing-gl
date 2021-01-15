@@ -16,4 +16,6 @@ Payroll-attendance, salary
 
 ***********************UPDATES************************
 CRM
+under settings module add tax master
+activate pos
 
