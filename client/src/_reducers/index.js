@@ -10,6 +10,7 @@ import uom from "./uomReducer";
 import customerGroup from "./customerGroupReducer";
 import supplierGroup from "./supplierGroupReducer";
 import inventory from "./inventoryReducer";
+import purchaseQuotation from "./purchaseQuotationReducer";
 
 export default combineReducers({
   auth,
@@ -23,4 +24,5 @@ export default combineReducers({
   customerGroup,
   supplierGroup,
   inventory,
+  purchaseQuotation,
 });

@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addSupplierGroup } from "../../_actions/supplierGroupAction";
+import Input from "../UI/Input";
 
 const CreateSupplierGroup = ({ addSupplierGroup, history }) => {
   const [formData, setFormData] = useState({
@@ -48,10 +49,10 @@ const CreateSupplierGroup = ({ addSupplierGroup, history }) => {
             Supplier Group Information
           </p>
 
-          <div class='form-group row'>
-            <label class='col-form-label col-sm-1'>Group</label>
-            <div class='col-sm-5'>
-              <input
+          <div className='form-group row'>
+            <label className='col-form-label col-sm-1'>Group</label>
+            <div className='col-sm-5'>
+              <Input
                 className='form-control '
                 name='group'
                 type='text'
@@ -64,8 +65,8 @@ const CreateSupplierGroup = ({ addSupplierGroup, history }) => {
               />
             </div>
 
-            <label class='col-form-label col-sm-1'>Description</label>
-            <div class='col-sm-5'>
+            <label className='col-form-label col-sm-1'>Description</label>
+            <div className='col-sm-5'>
               <textarea
                 className='form-control '
                 name='description'

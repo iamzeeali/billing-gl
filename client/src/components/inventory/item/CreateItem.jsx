@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getItemGroups } from "../../../_actions/itemGroupAction";
 import { getUoms } from "../../../_actions/uomAction";
+import Input from "../../UI/Input";
 
 const CreateItem = ({
   addItem,
@@ -120,41 +121,41 @@ const CreateItem = ({
         <div className=''>
           <p className='mx-auto font-weight-bold'>Item Information</p>
 
-          <div class='form-group'>
-            <div class='custom-control custom-radio'>
-              <input
+          <div className='form-group'>
+            <div className='custom-control custom-radio'>
+              <Input
                 type='radio'
                 value={type}
                 id='customRadio1'
                 name='type'
-                class='custom-control-input'
+                className='custom-control-input'
                 onChange={(e) => onToggleType(e)}
                 checked={type === "item" ? true : false}
               />
-              <label class='custom-control-label' for='customRadio1'>
+              <label className='custom-control-label' for='customRadio1'>
                 Item
               </label>
             </div>
-            <div class='custom-control custom-radio'>
-              <input
+            <div className='custom-control custom-radio'>
+              <Input
                 type='radio'
                 value={type}
                 id='customRadio2'
                 name='type'
-                class='custom-control-input'
+                className='custom-control-input'
                 onChange={(e) => onToggleType(e)}
                 checked={type === "service" ? true : false}
               />
-              <label class='custom-control-label' for='customRadio2'>
+              <label className='custom-control-label' for='customRadio2'>
                 Service
               </label>
             </div>
           </div>
 
-          <div class='form-group row'>
-            <label class='col-form-label col-sm-1'>Code</label>
-            <div class='col-sm-5'>
-              <input
+          <div className='form-group row'>
+            <label className='col-form-label col-sm-1'>Code</label>
+            <div className='col-sm-5'>
+              <Input
                 className='form-control '
                 name='itemCode'
                 type='text'
@@ -168,9 +169,9 @@ const CreateItem = ({
               <small id='code_error' className='text-danger'></small>
             </div>
 
-            <label class='col-form-label col-sm-1'>Name/SKU</label>
-            <div class='input-group col-sm-5'>
-              <input
+            <label className='col-form-label col-sm-1'>Name/SKU</label>
+            <div className='input-group col-sm-5'>
+              <Input
                 className='form-control '
                 name='name'
                 type='text'
@@ -184,13 +185,13 @@ const CreateItem = ({
             </div>
           </div>
 
-          <div class='form-group row'>
-            <label class='col-form-label col-sm-1'>Group</label>
-            <div class='col-sm-5'>
+          <div className='form-group row'>
+            <label className='col-form-label col-sm-1'>Group</label>
+            <div className='col-sm-5'>
               <select
                 name='group'
                 id=''
-                class='form-control '
+                className='form-control '
                 value={group}
                 onChange={(e) => onChangeHandler(e)}
                 required
@@ -210,9 +211,9 @@ const CreateItem = ({
               </Link>
               <small id='group_error' className='text-danger'></small>
             </div>
-            <label class='col-form-label col-sm-1'>Serial</label>
-            <div class='col-sm-5'>
-              <input
+            <label className='col-form-label col-sm-1'>Serial</label>
+            <div className='col-sm-5'>
+              <Input
                 className='form-control '
                 name='serial'
                 type='text'
@@ -225,13 +226,13 @@ const CreateItem = ({
             </div>
           </div>
 
-          <div class='form-group row'>
-            <label class='col-form-label col-sm-1'>UoM</label>
-            <div class='col-sm-5'>
+          <div className='form-group row'>
+            <label className='col-form-label col-sm-1'>UoM</label>
+            <div className='col-sm-5'>
               <select
                 name='uom'
                 id=''
-                class='form-control '
+                className='form-control '
                 value={uom}
                 onChange={(e) => onChangeHandler(e)}
                 required
@@ -252,9 +253,9 @@ const CreateItem = ({
               <small id='group_error' className='text-danger'></small>
             </div>
 
-            <label class='col-form-label col-sm-1'>Price</label>
-            <div class='col-sm-5'>
-              <input
+            <label className='col-form-label col-sm-1'>Price</label>
+            <div className='col-sm-5'>
+              <Input
                 className='form-control '
                 name='unitPrice'
                 type='text'
@@ -266,9 +267,9 @@ const CreateItem = ({
             </div>
           </div>
 
-          <div class='form-group row'>
-            <label class='col-form-label col-sm-1'>Description</label>
-            <div class='col-sm-5'>
+          <div className='form-group row'>
+            <label className='col-form-label col-sm-1'>Description</label>
+            <div className='col-sm-5'>
               <textarea
                 className='form-control '
                 name='description'
@@ -280,9 +281,9 @@ const CreateItem = ({
               />
             </div>
 
-            <label class='col-form-label col-sm-1'>HSN</label>
-            <div class='col-sm-5'>
-              <input
+            <label className='col-form-label col-sm-1'>HSN</label>
+            <div className='col-sm-5'>
+              <Input
                 className='form-control '
                 name='hsn'
                 type='text'
@@ -294,52 +295,52 @@ const CreateItem = ({
             </div>
           </div>
 
-          <div class='form-group row'>
-            <div class='col-sm-5'>
-              <div class='custom-control custom-checkbox'>
-                <input
+          <div className='form-group row'>
+            <div className='col-sm-5'>
+              <div className='custom-control custom-checkbox'>
+                <Input
                   type='checkbox'
-                  class='form-check-input'
+                  className='form-check-input'
                   value={purchaseItem}
                   name='purchaseItem'
                   onClick={(e) => onTogglePurchaseItem(e)}
                   checked={purchaseItem}
-                  class='custom-control-input'
+                  className='custom-control-input'
                   id='customCheck1'
                 />
-                <label class='custom-control-label' for='customCheck1'>
+                <label className='custom-control-label' for='customCheck1'>
                   Purchase Item
                 </label>
               </div>
 
-              <div class='custom-control custom-checkbox'>
-                <input
+              <div className='custom-control custom-checkbox'>
+                <Input
                   type='checkbox'
-                  class='form-check-input'
+                  className='form-check-input'
                   value={salesItem}
                   name='salesItem'
                   onClick={(e) => onToggleSalesItem(e)}
                   checked={salesItem}
-                  class='custom-control-input'
+                  className='custom-control-input'
                   id='customCheck2'
                 />
-                <label class='custom-control-label' for='customCheck2'>
+                <label className='custom-control-label' for='customCheck2'>
                   Sales Item
                 </label>
               </div>
 
-              <div class='custom-control custom-checkbox'>
-                <input
+              <div className='custom-control custom-checkbox'>
+                <Input
                   type='checkbox'
-                  class='form-check-input'
+                  className='form-check-input'
                   value={inventoryItem}
                   name='inventoryItem'
                   onClick={(e) => onToggleInventoryItem(e)}
                   checked={inventoryItem}
-                  class='custom-control-input'
+                  className='custom-control-input'
                   id='customCheck3'
                 />
-                <label class='custom-control-label' for='customCheck3'>
+                <label className='custom-control-label' for='customCheck3'>
                   Inventory Item
                 </label>
               </div>

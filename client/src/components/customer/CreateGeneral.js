@@ -1,4 +1,5 @@
 import React from "react";
+import Input from "../UI/Input";
 
 const CreateGeneral = (props) => {
   if (props.currentStep !== 1) {
@@ -8,10 +9,10 @@ const CreateGeneral = (props) => {
     <div className='p-4 mt-3'>
       <p className='mx-auto font-weight-bold'>General Information</p>
       <div className='general-form border border-primary p-4 '>
-        <div class='form-group row '>
-          <label class='col-form-label col-sm-1'>Code*</label>
-          <div class='col-sm-5'>
-            <input
+        <div className='form-group row '>
+          <label className='col-form-label col-sm-1'>Code*</label>
+          <div className='col-sm-5'>
+            <Input
               className='form-control '
               name='cCode'
               type='text'
@@ -25,10 +26,10 @@ const CreateGeneral = (props) => {
           </div>
         </div>
 
-        <div class='form-group row'>
-          <label class='col-form-label col-sm-1'>Name*</label>
-          <div class='col-sm-5'>
-            <input
+        <div className='form-group row'>
+          <label className='col-form-label col-sm-1'>Name*</label>
+          <div className='col-sm-5'>
+            <Input
               className='form-control '
               name='name'
               type='text'
@@ -39,12 +40,12 @@ const CreateGeneral = (props) => {
             />
             <small id='name_error' className='text-danger'></small>
           </div>
-          <label class='col-form-label col-sm-1'>Group*</label>
-          <div class='col-sm-5'>
+          <label className='col-form-label col-sm-1'>Group*</label>
+          <div className='col-sm-5'>
             <select
               name='group'
               id=''
-              class='form-control '
+              className='form-control '
               value={props.group}
               onChange={props.onChangeHandler}
               readOnly={props.readOnly}
@@ -58,10 +59,10 @@ const CreateGeneral = (props) => {
           </div>
         </div>
 
-        <div class='form-group row'>
-          <label class='col-form-label col-sm-1'>Phone 1</label>
-          <div class='col-sm-5'>
-            <input
+        <div className='form-group row'>
+          <label className='col-form-label col-sm-1'>Phone 1</label>
+          <div className='col-sm-5'>
+            <Input
               className='form-control '
               name='phone1'
               type='text'
@@ -71,9 +72,9 @@ const CreateGeneral = (props) => {
               readOnly={props.readOnly}
             />
           </div>
-          <label class='col-form-label col-sm-1'>Phone 2</label>
-          <div class='input-group col-sm-5'>
-            <input
+          <label className='col-form-label col-sm-1'>Phone 2</label>
+          <div className='input-group col-sm-5'>
+            <Input
               className='form-control '
               name='phone2'
               type='text'
@@ -85,10 +86,10 @@ const CreateGeneral = (props) => {
           </div>
         </div>
 
-        <div class='form-group row'>
-          <label class='col-form-label col-sm-1'>Mobile</label>
-          <div class='col-sm-5'>
-            <input
+        <div className='form-group row'>
+          <label className='col-form-label col-sm-1'>Mobile</label>
+          <div className='col-sm-5'>
+            <Input
               className='form-control '
               name='mobile'
               type='text'
@@ -98,9 +99,9 @@ const CreateGeneral = (props) => {
               readOnly={props.readOnly}
             />
           </div>
-          <label class='col-form-label col-sm-1'>Email</label>
-          <div class='input-group col-sm-5'>
-            <input
+          <label className='col-form-label col-sm-1'>Email</label>
+          <div className='input-group col-sm-5'>
+            <Input
               className='form-control '
               name='email'
               type='text'
@@ -112,10 +113,10 @@ const CreateGeneral = (props) => {
           </div>
         </div>
 
-        <div class='form-group row'>
-          <label class='col-form-label col-sm-1'>Industry</label>
-          <div class='col-sm-5'>
-            <input
+        <div className='form-group row'>
+          <label className='col-form-label col-sm-1'>Industry</label>
+          <div className='col-sm-5'>
+            <Input
               className='form-control '
               name='industry'
               type='text'
@@ -125,9 +126,9 @@ const CreateGeneral = (props) => {
               readOnly={props.readOnly}
             />
           </div>
-          <label class='col-form-label col-sm-1'>Logo</label>
-          <div class='input-group col-sm-5'>
-            <input
+          <label className='col-form-label col-sm-1'>Logo</label>
+          <div className='input-group col-sm-5'>
+            <Input
               className='form-control '
               name='photo'
               type='text'
@@ -139,10 +140,10 @@ const CreateGeneral = (props) => {
           </div>
         </div>
         <hr />
-        <div class='form-group row'>
-          <label class='col-form-label col-sm-1'>Name</label>
-          <div class='col-sm-5'>
-            <input
+        <div className='form-group row'>
+          <label className='col-form-label col-sm-1'>Name</label>
+          <div className='col-sm-5'>
+            <Input
               className='form-control '
               name='contactPerson'
               type='text'
@@ -152,9 +153,9 @@ const CreateGeneral = (props) => {
               readOnly={props.readOnly}
             />
           </div>
-          <label class='col-form-label col-sm-1'>Phone</label>
-          <div class='input-group col-sm-5'>
-            <input
+          <label className='col-form-label col-sm-1'>Phone</label>
+          <div className='input-group col-sm-5'>
+            <Input
               className='form-control '
               name='contactPersonPhone'
               type='text'
@@ -166,10 +167,10 @@ const CreateGeneral = (props) => {
           </div>
         </div>
 
-        <div class='form-group row'>
-          <label class='col-form-label col-sm-1'>Email</label>
-          <div class='input-group col-sm-5'>
-            <input
+        <div className='form-group row'>
+          <label className='col-form-label col-sm-1'>Email</label>
+          <div className='input-group col-sm-5'>
+            <Input
               className='form-control '
               name='contactPersonEmail'
               type='email'

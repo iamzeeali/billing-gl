@@ -193,32 +193,32 @@ const Customer = ({
 
       <form style={{ paddingTop: "40px" }} onSubmit={(e) => onSubmitHandler(e)}>
         {!readOnly && (
-          <div class='form-group'>
-            <div class='custom-control custom-radio'>
+          <div className='form-group'>
+            <div className='custom-control custom-radio'>
               <input
                 type='radio'
                 value={active}
                 id='customRadio1'
                 name='active'
-                class='custom-control-input'
+                className='custom-control-input'
                 onChange={(e) => onToggle(e)}
                 checked={active ? true : false}
               />
-              <label class='custom-control-label' for='customRadio1'>
+              <label className='custom-control-label' for='customRadio1'>
                 Active
               </label>
             </div>
-            <div class='custom-control custom-radio'>
+            <div className='custom-control custom-radio'>
               <input
                 type='radio'
                 value={active}
                 id='customRadio2'
                 name='active'
-                class='custom-control-input'
+                className='custom-control-input'
                 onChange={(e) => onToggle(e)}
                 checked={!active ? true : false}
               />
-              <label class='custom-control-label' for='customRadio2'>
+              <label className='custom-control-label' for='customRadio2'>
                 Inactive
               </label>
             </div>

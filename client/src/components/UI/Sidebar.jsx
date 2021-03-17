@@ -39,12 +39,12 @@ class Sidebar extends Component {
 
     const authLinks = (
       <Fragment>
-        <nav class='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
-          <Link class='navbar-brand lead' to='/'>
+        <nav className='navbar navbar-expand-lg fixed-top navbar-dark bg-primary'>
+          <Link className='navbar-brand lead' to='/'>
             bigbiz{" "}
           </Link>
           <button
-            class='navbar-toggler'
+            className='navbar-toggler'
             type='button'
             data-toggle='collapse'
             data-target='#navbarColor01'
@@ -52,11 +52,11 @@ class Sidebar extends Component {
             aria-expanded='false'
             aria-label='Toggle navigation'
           >
-            <span class='navbar-toggler-icon'></span>
+            <span className='navbar-toggler-icon'></span>
           </button>
-          <div class='collapse navbar-collapse' id='navbarColor01'>
-            <ul class='navbar-nav mr-auto'>
-              <li class='nav-item active'>
+          <div className='collapse navbar-collapse' id='navbarColor01'>
+            <ul className='navbar-nav mr-auto'>
+              <li className='nav-item active'>
                 <Link to='/dashboard' className='nav-link' title='Dashboard'>
                   <i className='fa fa-tachometer-alt'></i>
                 </Link>
@@ -357,7 +357,7 @@ class Sidebar extends Component {
                 </div>
               </li>
 
-              <li class='nav-item active'>
+              <li className='nav-item active'>
                 <Link to='/settings' className='nav-link' title='Settings'>
                   <i className='fa fa-cog'></i>
                 </Link>

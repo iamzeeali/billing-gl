@@ -4,7 +4,7 @@ import styles from "./Spinner.module.css";
 const Spinner = () => {
   return (
     <div
-      class={`${styles.spin} mx-auto min-vh-100 d-flex flex-column justify-content-center`}
+      className={`${styles.spin} mx-auto min-vh-100 d-flex flex-column justify-content-center`}
     ></div>
   );
 };

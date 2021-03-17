@@ -20,6 +20,7 @@ const warehouseRouter = require("./routes/warehouseRoutes");
 const uomRouter = require("./routes/uomRoutes");
 const customerGroupRouter = require("./routes/customerGroupRoutes");
 const supplierGroupRouter = require("./routes/supplierGroupRoutes");
+const PurchaseQuotationRouter = require("./routes/purchaseQuotationRoutes");
 
 const app = express();
 
@@ -64,18 +65,18 @@ app.use(mongoSanitize());
 app.use(xss());
 
 //Prevent Paramter Pollution
-app.use(
-  hpp({
-    whitelist: [
-      "duration",
-      "ratingsQuantity",
-      "ratingsAverage",
-      "maxGroupSize",
-      "difficulty",
-      "price",
-    ],
-  })
-);
+// app.use(
+//   hpp({
+//     whitelist: [
+//       "duration",
+//       "ratingsQuantity",
+//       "ratingsAverage",
+//       "maxGroupSize",
+//       "difficulty",
+//       "price",
+//     ],
+//   })
+// );
 
 app.use(compression());
 
@@ -91,6 +92,7 @@ app.use("/api/warehouse", warehouseRouter);
 app.use("/api/uom", uomRouter);
 app.use("/api/customer-group", customerGroupRouter);
 app.use("/api/supplier-group", supplierGroupRouter);
+app.use("/api/purchase-quotation", PurchaseQuotationRouter);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {

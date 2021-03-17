@@ -14,7 +14,7 @@ import Alert from "./components/UI/Alert";
 import NotFound from "./components/UI/NotFound";
 import Login from "./components/authentication/Login";
 import Landing from "./components/UI/Landing";
-import Dashboard from "./components/dashboard/dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 
 // Customer
 

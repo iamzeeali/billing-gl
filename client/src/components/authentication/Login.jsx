@@ -68,15 +68,15 @@ const Login = ({ login, isAuthenticated }) => {
                           </div>
                         </div>
                         <div>
-                          <div class='form-group'>
-                            <div class='custom-control custom-checkbox'>
+                          <div className='form-group'>
+                            <div className='custom-control custom-checkbox'>
                               <input
                                 type='checkbox'
-                                class='custom-control-input'
+                                className='custom-control-input'
                                 id='customCheck2'
                               />
                               <label
-                                class='custom-control-label'
+                                className='custom-control-label'
                                 for='customCheck2'
                               >
                                 Remember me?
