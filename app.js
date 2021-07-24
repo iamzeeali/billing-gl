@@ -42,7 +42,7 @@ mongoose
 //set security http headers
 app.use(helmet());
 
-//development logging
+//development logging.
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
